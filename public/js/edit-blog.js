@@ -16,7 +16,7 @@ async function editFormHandler(event){
         }
     });
     if (response.ok){
-        document.location.replace('/dashboard-routes/');
+        document.location.replace('/dashboard-routes');
     }else {
         alert(response.statusText);
     }
