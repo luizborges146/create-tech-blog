@@ -71,7 +71,7 @@ router.post('/', withAuth, async (req, res) => {
       res.status(400).json(err);
     }
   });
-// ################################ update the post ################################
+// ################################ update the post #################################
 router.put('/:id', withAuth, async (req, res) => {
     try {
       const blogData = await Blog.update(
