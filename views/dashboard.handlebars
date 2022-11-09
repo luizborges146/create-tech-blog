@@ -1,32 +1,16 @@
-<h2>Create New Post</h2>
-<section class="form-box">
-    <form class="new-post-form">
-        <div>
-            <label for="post-title">Title</label>
-            <input type="text" id="post-title" name="post-title" />
-        </div>
-        <div>
-            <label for="description">Content</label>
-            <input type="text" id="post-content" name="description" />
-        </div>
-        <button type="submit" class="btn" id="submit"><a href="/">Create</a></button>
-    </form>
-</section>
+<div class='mb-5 pt-3'>
+    <a href='/dashboard/create/'><button class='btn btn-primary justify-content-end' id='create-blog'>create a
+            blog</button></a>
+    <h2 class='title pb-4'>dashboard: your blogs</h2>
+    {{#if blogs.length}}
+</div>
 
-<br>
+{{#each blogs as | blog|}}
+{{>blog-info blog}}
+<a href='/dashboard/edit/{{blog.id}}'><button class='btn btn-warning mb-5 ml-5'>edit blog</button></a>
+{{/each}}
 
-{{#if posts.length}}
-<h2>Your Posts</h2>
-<section class="form-box">
-    <ul>
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-        </li>
-        {{/each}}
-    </ul>
-</section>
+{{else}}
+<h6 class ='text center font-italic pb-4'> you do not currently have any blogs</h6>
+
 {{/if}}
-
-<script src="/javascript/addPost.js"></script>

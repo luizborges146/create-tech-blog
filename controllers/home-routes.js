@@ -35,7 +35,7 @@ router.get('/', async(req,res) => {
         res.status(500).json(err);
     }
 });
-// ################################ Log in ################################
+// ################################ Single Post ################################
 router.get('/blogs/:id', async (req, res) => {
     try {
       const blogData = await Blog.findOne({
