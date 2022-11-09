@@ -1,7 +1,8 @@
 # Note Taker Express
 
 * [GitHub repository](https://github.com/luizborges146/create-tech-blog) Link to the repository<br />
-* [Video Link](https://drive.google.com/file/d/1iQaqSz7WnZ1RQO_yTLgyJlmwUFSkYyPl/view) This is the video showing the application<br />
+* [Video Link](https://drive.google.com/file/d/1QAD2aYwZamD51vWlkyTh14WF6WV8VXq5/view) This is the video showing the application<br />
+* [Heroku deployed link](https://techbloglf.herokuapp.com/)
 
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
