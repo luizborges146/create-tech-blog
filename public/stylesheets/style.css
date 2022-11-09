@@ -2,6 +2,31 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #c6b9b9;
+  border: 2px black solid;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  border: 3px green solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main.container.container-fluid.mt-5 {
+  border: 2px yellow solid;
+}
+
+footer.container.pb-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/*----------------------------------------------------------------------*/
 body, html {
   height: 100%;
   padding: 0;

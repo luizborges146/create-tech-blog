@@ -13,13 +13,13 @@
   <script src="https://kit.fontawesome.com/b210927ee1.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-
+<body>
 <div class='wrapper d-flex justify-space-around'>
   <nav>
     <h1 class=' d-flex align-center p-2 m-4'>Tech Blog
       <span role="img" class='m-4' aria-label="writing-hand"></span>
     </h1>
-    <nav class='navbar mt-2'></nav>
+    {{!-- <nav class='navbar mt-2'></nav> --}}
     {{#if loggedIn}}
     {{!-- if access gained show the below navbar --}}
     <a href="/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>homepage</a>
@@ -38,15 +38,14 @@
   </nav>
   </header>
 
-  <body>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
+  
+    <main class="container container-fluid ">
       {{{ body }}}
     </main>
 
     <footer class='container pb-2'>
-      <div class='col-2 d-flex justify-space-between'>
-        <p>
+      {{!-- <div class='col-2 d-flex justify-space-between'> --}}
+    
           <a href='/'>homepage</a>{{#if loggedIn}} |
           <a href='/dashboard-routes'>dashboard</a> |
           <a href='/dashboard-routes/create/'>create a new blog</a>
@@ -54,11 +53,9 @@
 
           <a href='/login/'>login</a>
           {{/if}}
-        </p>
-      </div>
+     
+      {{!-- </div> --}}
 
-      <div class='col-8 d-flex justify-space-between'>
-      </div>
     </footer>
 </div>
 

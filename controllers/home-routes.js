@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 const { Blog, User, Comment} = require('../models');
 
 // ################################ Find all Blogs ################################
-router.get('/', async(req,res) => {
+router.get('/', withAuth, async(req,res) => {
     console.log();
     try {
         //console.log(req.session);
@@ -20,6 +20,7 @@ router.get('/', async(req,res) => {
                     attributes:['username']
                 }
             },
+
             {
             model:User,
             attributes:['username'],
