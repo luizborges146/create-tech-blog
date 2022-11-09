@@ -24,7 +24,7 @@ router.get('/:id', async(req,res) =>{
             },
             include: [{
                 model:Blog,
-                attributes: ['id', 'title', 'content', 'create_at'],
+                attributes: ['id', 'title', 'description', 'create_at'],
             },
             {
                 model: Comment,

@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req,res) => {
     try{
         const blogData = await Blog.findAll({
-            attributes:['id','title','created_at','content'],
+            attributes:['id','title','created_at','description'],
             order:[['created_at','DESC']],
             include:[
                 {
@@ -36,18 +36,18 @@ router.get('/:id', async (req, res) => {
         where: {
           id: req.params.id,
         },
-        attributes: ['id', 'title', 'content', 'created_at'],
+        attributes: ['id', 'title', 'description', 'created_at'],
         include: [
           {
             model: User,
-            attributes: ['username', 'twitter', 'github'],
+            attributes: ['username'],
           },
           {
             model: Comment,
             attributes: ['id', 'comment_text','user_id','blog_id','create_at'],
             include: {
               model: User,
-              attributes: ['username', 'twitter', 'github'],
+              attributes: ['username'],
             },
           },
         ],

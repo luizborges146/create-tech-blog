@@ -12,11 +12,11 @@ router.get('/', withAuth, async(req,res)=> {
             where: {
                 user_id: req.session.user_id,
             },
-            attributes: ['id','title','content','create_at'],
+            attributes: ['id','title','content','created_at'],
             include:[
                 {
                 model:Comment,
-                attributes:['id', 'comment_text', 'blog_id', 'user_id', 'create_at'],
+                attributes:['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
 
                 include: {
                     model:User,
@@ -49,11 +49,11 @@ router.get('/edit/:id', withAuth, async (req,res) => {
             where: {
                 id:req.params.id,
             },
-            attributes: ['id','title','content','create_at'],
+            attributes: ['id','title','content','created_at'],
             include:[
                 {
                 model:Comment,
-                attributes:['id', 'comment_text', 'blog_id', 'user_id', 'create_at'],
+                attributes:['id', 'comment_text', 'user_id', 'blog_id', 'created_at'],
 
                 include: {
                     model:User,
@@ -82,17 +82,17 @@ router.get('/edit/:id', withAuth, async (req,res) => {
 });
 
 // ################################ Create a new Blog ################################
-router.get('/create', withAuth, async(req,res) => {
+router.get('/create/', withAuth, async(req,res) => {
     try {
         const blogData = await Blog.findAll({
             where: {
                 user_id: req.session.user_id,
             },
-            attributes: ['id','title','content','create_at'],
+            attributes: ['id','title','content','created_at'],
             include:[
                 {
                 model:Comment,
-                attributes:['id', 'comment_text', 'blog_id', 'user_id', 'create_at'],
+                attributes:['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
 
                 include: {
                     model:User,

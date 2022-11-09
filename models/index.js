@@ -1,5 +1,5 @@
 const Blog = require('./Blog');
-const Comment = require('./Comments');
+const Comment = require('./Comment');
 const User = require('./User');
 
 

@@ -7,13 +7,13 @@ const { Blog, User, Comment} = require('../models');
 router.get('/', async(req,res) => {
     console.log();
     try {
-        console.log(req.session);
+        //console.log(req.session);
         const blogData= await Blog.findAll({
-            attributes: ['id','title','content','create_at'],
+            attributes: ['id','title','content','created_at'],
             include:[
                 {
                 model:Comment,
-                attributes:['id', 'comment_text', 'blog_id', 'user_id', 'create_at'],
+                attributes:['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],//changed to created as I check the database
 
                 include: {
                     model:User,
@@ -46,7 +46,7 @@ router.get('/blogs/:id', async (req, res) => {
         include: [
           {
             model: Comment,
-            attributes:['id', 'comment_text', 'blog_id', 'user_id', 'create_at'],
+            attributes:['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
             include: {
               model: User,
               attributes: ['username'],
