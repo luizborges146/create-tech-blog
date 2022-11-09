@@ -25,7 +25,7 @@ router.post('/', withAuth, async (req, res) => {
       res.status(400).json(err);
     }
   });
-// ################################ users by id ################################
+// ################################ delete comment by id ################################
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const deleteComment = await Comment.destroy({

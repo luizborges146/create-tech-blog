@@ -24,11 +24,11 @@ router.get('/:id', async(req,res) =>{
             },
             include: [{
                 model:Blog,
-                attributes: ['id', 'title', 'description', 'create_at'],
+                attributes: ['id', 'title', 'content', 'created_at'],
             },
             {
                 model: Comment,
-                attributes:['id', 'comment_text','create_at'],
+                attributes:['id', 'comment_text','created_at'],
                 include: {
                     model:Blog,
                     attributes:['title'],
@@ -53,7 +53,6 @@ router.post('/', async (req, res) => {
         email: req.body.email,
         password: req.body.password,
       });
-  
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.username = userData.username;
@@ -135,10 +134,10 @@ router.delete('/:id', withAuth, async (req, res) => {
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
-        res.status(204).end();
+        res.status(200).end();
       });
     } else {
-      res.status(404).end();
+      res.status(400).end();
     }
   });
 

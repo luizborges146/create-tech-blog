@@ -1,17 +1,18 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+const sequelize = require('../../config/connection');
 
 // ################################ Get all users Blog ################################
 router.get('/', async (req,res) => {
     try{
         const blogData = await Blog.findAll({
-            attributes:['id','title','created_at','description'],
+            attributes:['id','title','created_at','content'],
             order:[['created_at','DESC']],
             include:[
                 {
                     model:Comment,
-                    attributes:['id', 'comment_text','user_id','blog_id','create_at'],
+                    attributes:['id', 'comment_text','user_id','blog_id','created_at'],
                     include:{
                         model: User,
                         attributes:['username'],
@@ -36,7 +37,7 @@ router.get('/:id', async (req, res) => {
         where: {
           id: req.params.id,
         },
-        attributes: ['id', 'title', 'description', 'created_at'],
+        attributes: ['id', 'title', 'content', 'created_at'],
         include: [
           {
             model: User,
@@ -44,7 +45,7 @@ router.get('/:id', async (req, res) => {
           },
           {
             model: Comment,
-            attributes: ['id', 'comment_text','user_id','blog_id','create_at'],
+            attributes: ['id', 'comment_text','user_id','blog_id','created_at'],
             include: {
               model: User,
               attributes: ['username'],
