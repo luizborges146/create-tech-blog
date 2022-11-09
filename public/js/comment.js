@@ -21,13 +21,11 @@ async function commentFormHandler(event) {
         },
       });
       if (response.ok) {
-        document.location.reload('/dashboard/');
+        document.location.reload('/dashboard-routes');
       } else {
         alert(response.statusText);
       }
     }
   }
   
-  document
-    .querySelector('.comment-form')
-    .addEventListener('click', commentFormHandler);
+  document.querySelector('.comment-form').addEventListener('click', commentFormHandler);
