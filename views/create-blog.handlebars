@@ -1,6 +1,6 @@
 
 <section>
-    <a href='/dashboard' class='justify-content-end'>&larr; back to dashboard</a>
+    <a href='/dashboard-routes' class='justify-content-end'>&larr; back to dashboard</a>
     <h2 class='title'>create a new blog</h2>
     <hr>
 
@@ -13,8 +13,6 @@
 
         <div>
             <label for='blog-content'>content:</label>
-            {{!-- may not need the input tag with bootstrap-4 textarea --}}
-            {{!-- <input id='blog-content' name='blog-content' placeholder='insert blog content here' /> --}}
             <textarea class='form-control rounded-3 z-depth-1' name='blog-content' id='blog-content' rows='10' placeholder='insert blog content here'></textarea>
          </div>
          <button type='submit' class='btn btn-primary justify-content-end'>create blog</button>

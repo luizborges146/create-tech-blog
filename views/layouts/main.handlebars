@@ -23,8 +23,8 @@
     {{#if loggedIn}}
     {{!-- if access gained show the below navbar --}}
     <a href="/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>homepage</a>
-    <a href="./dashboard" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>dashboard</a>
-    <a href="./dashboard/create/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1 mr-4'>create a
+    <a href="/dashboard-routes" class='navbar-item navbar-item-action active" aria-current="true"" pt-1'>dashboard</a>
+    <a href="/dashboard-routes/create/" class='navbar-item navbar-item-action active" aria-current="true"" pt-1 mr-4'>create a
       blog</a>
     <button id='logout' class='btn btn-danger'>logout</button>
     {{else}}
@@ -48,11 +48,11 @@
       <div class='col-2 d-flex justify-space-between'>
         <p>
           <a href='/'>homepage</a>{{#if loggedIn}} |
-          <a href='./dashboard/'>dashboard</a> |
-          <a href='./dashboard/create/'>create a new blog</a>
+          <a href='/dashboard-routes'>dashboard</a> |
+          <a href='/dashboard-routes/create/'>create a new blog</a>
           {{else}}
 
-          <a href='./login/'>login</a>
+          <a href='/login/'>login</a>
           {{/if}}
         </p>
       </div>

@@ -1,5 +1,5 @@
 <div class='mb-5 pt-3'>
-    <a href='/dashboard/create/'><button class='btn btn-primary justify-content-end' id='create-blog'>create a
+    <a href='/dashboard-routes/create/'><button class='btn btn-primary justify-content-end' id='create-blog'>create a
             blog</button></a>
     <h2 class='title pb-4'>dashboard: your blogs</h2>
     {{#if blogs.length}}
@@ -7,7 +7,7 @@
 
 {{#each blogs as | blog|}}
 {{>blog-info blog}}
-<a href='/dashboard/edit/{{blog.id}}'><button class='btn btn-warning mb-5 ml-5'>edit blog</button></a>
+<a href='/dashboard-routes/edit/{{blog.id}}'><button class='btn btn-warning mb-5 ml-5'>edit blog</button></a>
 {{/each}}
 
 {{else}}
