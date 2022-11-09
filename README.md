@@ -1,4 +1,4 @@
-# Note Taker Express
+# Tech Blog
 
 * [GitHub repository](https://github.com/luizborges146/create-tech-blog) Link to the repository<br />
 * [Video Link](https://drive.google.com/file/d/1QAD2aYwZamD51vWlkyTh14WF6WV8VXq5/view) This is the video showing the application<br />
@@ -26,7 +26,7 @@ The idea of this application is to a tech blog, where the user is able to create
 The application follow the MVC (Model-View-Controller), it also apply express handlebars, MySQL2, Sequelize, dotenv, express sessions.
 
 
-![alt Create a new product](assets/images/create-product.png)
+![alt Create a new product](assets/images/techBlog.png)
 
 
 ## [Instalation](#instalation)
@@ -34,10 +34,10 @@ In order to use test this application, you need to create a create an .env file 
 
 ##### Running the /db/schema.sql
 
-[<img src="./assets/gifs/runningSchema.gif" alt='Gif Adding Schema'>]  
+<!-- [<img src="./assets/gifs/runningSchema.gif" alt='Gif Adding Schema'>]  
 
 ##### Running the /seeds/index.js
-[<img src="assets/gifs/runSeedsJS.gif" alt='Gif adding index.js'>]
+[<img src="assets/gifs/runSeedsJS.gif" alt='Gif adding index.js'>] -->
 
 Then one seeds folder, there are a data sample that can be used to test the application.
     
