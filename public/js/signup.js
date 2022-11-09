@@ -13,7 +13,7 @@ async function signupFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('./dashboard-routes');
       } else {
         alert(response.statusText);
       }
