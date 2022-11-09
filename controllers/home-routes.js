@@ -74,7 +74,7 @@ router.get('/blogs/:id', async (req, res) => {
 
 // ################################ Sign Up ################################
 router.get('/signup', (req,res) => {
-    if (req.sessuib.loggedIn) {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
@@ -82,7 +82,7 @@ router.get('/signup', (req,res) => {
 });
 // ################################ Log in ################################
 router.get('/login', (req,res) => {
-    if (req.sessuib.loggedIn) {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
